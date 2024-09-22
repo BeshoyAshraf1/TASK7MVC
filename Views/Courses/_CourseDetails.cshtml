@@ -1,0 +1,33 @@
+﻿@model task3.Models.Course
+
+<div class="card">
+    <div class="card-header">
+        <h2>Course Details: @Model.Name</h2>
+    </div>
+    <div class="card-body">
+        <h4>Degree: @Model.Degree</h4>
+        <h4>Min Degree: @Model.MinDegree</h4>
+
+        <h5>Instructors</h5>
+        <ul>
+            @foreach (var instructor in Model.Instractors)
+            {
+                <li>
+                    <strong>Name:</strong> @instructor.Name <br />
+                    <strong>Salary:</strong> @instructor.Salary <br />
+                    <strong>Address:</strong> @instructor.address
+                </li>
+            }
+        </ul>
+
+        <h5>Course Results</h5>
+        <ul>
+            @foreach (var result in Model.Courseresults)
+            {
+                <li>
+                    <strong>Degree:</strong> @result.Degree
+                </li>
+            }
+        </ul>
+    </div>
+</div>

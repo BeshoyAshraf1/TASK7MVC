@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Courseresult
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Courses Name</th>
+            <th scope="col">trainees Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+   
+            <tr>
+                <td>@Model.Id</td>
+            <td>@Model.Degree</td>
+            <td>@Model.Courses.Name</td>
+            <td>@Model.trainees.Name</td>
+
+           
+    </tbody>
+</table>

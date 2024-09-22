@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Courseresult
+
+<h2>Create New Instractor</h2>
+
+<form asp-action="CreateCourseResult" method="post">
+    <div class="form-group">
+        <label asp-for="Degree" class="control-label">Degree</label>
+        <input asp-for="Degree" class="form-control" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+
+
+    <select asp-for="traineeId" class="form-control" asp-items="ViewBag.trainees"></select>
+    <select asp-for="CourseId" class="form-control" asp-items="ViewBag.Courses"></select>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

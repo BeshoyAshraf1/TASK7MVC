@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Course
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Degree</th>
+            <th scope="col">MinDegree</th>
+            <th scope="col">Instractors</th>
+            <th scope="col">Courseresults</th>
+            <th scope="col">delete</th>
+            <th scope="col">update</th>
+            <th scope="col">create</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    
+            <tr>
+                <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Degree</td>
+            <td>@Model.MinDegree</td>
+                <td>
+                @foreach (var instructor in Model.Instractors)
+                    {
+                        <li>
+                            <strong>Name:</strong> @instructor.Name <br />
+                            <strong>Salary:</strong> @instructor.Salary <br />
+                            <strong>Address:</strong> @instructor.address
+                        </li>
+                    }
+                </td>
+                <td>
+                @foreach (var instructor in Model.Courseresults)
+                    {
+                        <li>
+                            <strong>Name:</strong> @instructor.Degree
+
+                        </li>
+                    }
+                </td>
+                <td>
+                <a href="InstractorController1/Details/@Model.Id">Details </a>
+                </td>
+                <td>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                <form asp-action="DeleteInstractor" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this instractor?');">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+                <td>
+                    <a asp-action="CreateInstractor" class="btn btn-primary">Create New Instractor</a>
+
+                </td>
+            </tr>
+        
+    </tbody>
+</table>

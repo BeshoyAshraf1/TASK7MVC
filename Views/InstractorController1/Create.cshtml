@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Instractor
+
+<h2>Create New Instractor</h2>
+
+<form asp-action="CreateInstractor" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Salary" class="control-label">Salary</label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="address" class="control-label">Address</label>
+        <input asp-for="address" class="form-control" />
+        <span asp-validation-for="address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="image" class="control-label">image</label>
+        <input asp-for="image" class="form-control" />
+        <span asp-validation-for="image" class="text-danger"></span>
+    </div>
+
+    <select asp-for="DepratmentId" class="form-control" asp-items="ViewBag.Depratments"></select>
+    <select asp-for="CourseId" class="form-control" asp-items="ViewBag.Courses"></select>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

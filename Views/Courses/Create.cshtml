@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Course
+
+<h2>Create New Instractor</h2>
+
+<form asp-action="CreateCourse" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" required minlength="3" maxlength="50" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Degree" class="control-label">Degree</label>
+        <input asp-for="Degree" class="form-control" required minlength="2" maxlength="100" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MinDegree" class="control-label">MinDegree</label>
+        <input asp-for="MinDegree" class="form-control" required min="0" />
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+        @Html.ValidationMessageFor(model => model.MinDegree)
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
